@@ -23,7 +23,7 @@ Jeweler是一个用于开发RubyGem项目的工具，主要为RubyGem的开发�
 
 #### 安装Jeweler
 
-```:::bash
+```bash
 gem install jeweler
 ```
 
@@ -43,7 +43,7 @@ gem install jeweler
 在使用Jeweler的脚手架生成器创建了一个新的RubyGem项目后，首先需要修改该项目的一些元属性。这些属性将会用来生成.gemspec文件。属性信息在[http://docs.rubygems.org/read/chapter/20](http://docs.rubygems.org/read/chapter/20)中有详细的说明。Jeweler通过一个Rake
 Task自动化的生成.gemspec文件，因此通过修改Rakefile文件中gem的相关属性来实现自定义RubyGem。下面是一个新生成项目的Rakefile文件：
 
-```:::ruby
+```ruby
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   gem.name = "new_project"

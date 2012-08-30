@@ -40,14 +40,14 @@ x86_64，而用于安装ConVirt和用于安装虚拟机的计算机则安装Ubun
 编辑软件包源列表文件/etc/apt/sources.list，追加http://archive.canonical.com/ubuntu
 lucid partner，并更新软件索引：
 
-```:::bash
+```bash
 sudo apt-get update
 ```
 * *安装被管理的虚拟资源服务器（使用两台UbuntuServer中的一台）*
 
   * 安装KVM 
 
-```:::bash
+```bash
 sudo apt-get install ssh kvm socat dnsmasq uml-utilities lvm2 expect
 ```
 
@@ -55,19 +55,19 @@ sudo apt-get install ssh kvm socat dnsmasq uml-utilities lvm2 expect
 
   通过安装convirture-tools来帮助你配置虚拟资源服务器，使得其可以通过ConVirt来进行方便的管理。该命令将创建一个公有的网桥，相关的脚本并将操作摘要写入/var/cache/convirt/server_info。
 
-```:::bash
+```bash
 sudo apt-get install convirture-tools
 ```
 
   安装相关依赖：
 
-```:::bash
+```bash
 sudo convirt-tool install_dependencies
 ```
 
   配置网络：
 
-```:::bash
+```bash
 sudo convirt-tool setup
 ```
 
@@ -75,13 +75,13 @@ sudo convirt-tool setup
 
 安装：
 
-```:::bash
+```bash
 sudo apt-get install convirt2
 ```
 
 配置防火墙，使得可以通过VNC来连接虚拟机控制台。
 
-```:::bash
+```bash
 iptables -I INPUT -m state --state NEW -p tcp --dport 6900:6999 -j ACCEPT
 ```
 
@@ -89,7 +89,7 @@ iptables -I INPUT -m state --state NEW -p tcp --dport 6900:6999 -j ACCEPT
 添加SSH
 Key，使得从ConVirt到被管理的虚拟资源服务器的SSH连接采用Key的方式进行认证。
 
-```:::bash
+```bash
 cp /var/lib/convirt/identity/cms_id_rsa.pub /root/.ssh/id_rsa.pub
 cp /var/lib/convirt/identity/cms_id_rsa /root/.ssh/id_rsa
 scp /var/lib/convirt/identity/cms_id_rsa.pub
@@ -102,7 +102,7 @@ cat ~/.ssh/cms_id_rsa.pub >> ~/.ssh/authorized_keys
 
 启动Convirt：
 
-```:::bash
+```bash
 sudo convirt-ctl start
 ```
 

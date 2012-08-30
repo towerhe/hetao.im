@@ -60,13 +60,13 @@ READMORE
 ### 启动Rack Server预览项目
 - 进入项目目录：
 
-```:::bash
+```bash
 cd /path/to/project
 ```
 
 - 启动Rack Server：
 
-```:::bash
+```bash
 rackup
 ```
 

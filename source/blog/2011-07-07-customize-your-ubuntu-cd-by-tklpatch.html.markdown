@@ -39,20 +39,20 @@ READMORE
 
 *将Turnkey仓库添加到源列表中*
 
-```:::bash
+```bash
 deb http://archive.turnkeylinux.org/ubuntu lucid main universe
 ```
 
 *安装turnkey-keyring*
 
-```:::bash
+```bash
 wget http://code.turnkeylinux.org/turnkey-keyring/turnkey-release-keyring.gpg
 sudo apt-key add turnkey-release-keyring.gpg
 ```
 
 *安装tklpatch*
 
-```:::bash
+```bash
 sudo apt-get update
 sudo apt-get install tklpatch
 ```
@@ -111,7 +111,7 @@ tklpatch-rails                       # http://github.com/towerhe/tklpatch-rails
 首先需要从[Turnkey Linux](http://www.turnkeylinux.com)下载需要应用patch的基础iso文件。如：[turnkey-core-11.1-lucid-x86.iso](http://downloads.sourceforge.net/project/turnkeylinux/turnkey-core/11.1-lucid-x86/turnkey-core-11.1-lucid-x86.iso)。
 然后执行tklpatch命令应用patch。
 
-```:::bash
+```bash
   sudo tklpatch turnkey-core-11.1-lucid-x86.iso path/to/your/tklpatch
 ```
 
@@ -119,67 +119,67 @@ tklpatch-rails                       # http://github.com/towerhe/tklpatch-rails
 
 * tklpatch： 将tklpatch应用到基础iso文件
 
-```:::bash
+```bash
   tklpatch path/to/turnkey-core.iso path/to/your/tklpatch
 ```
 
 * tklpatch-apply： 将tklpatch应用到的解压的root文件系统
 
-```:::bash
+```bash
   tklpatch-apply rootfs-dir patch-dir|patch.tar.gz
 ```
 
 * tklpatch-apply-conf： 在解压的root文件系统中，执行conf脚本
 
-```:::bash
+```bash
   tklpatch-apply-conf rootfs-dir conf
 ```
 
 * tklpatch-apply-debs： 在解压的root文件系统中，安装debs
 
-```:::bash
+```bash
   tklpatch-apply-debs rootfs-dir debs-dir
 ```
 
 * tklpatch-apply-overlay： 复制overlay下的文件和目录到解压的root文件系统
 
-```:::bash
+```bash
   tklpatch-apply-overlay rootfs-dir overlay-dir
 ```
 
 * tklpatch-bundle： 将创建的tklpatch项目打包
 
-```:::bash
+```bash
   tklpatch-bundle patch-dir
 ```
 
 * tklpatch-chroot： 将当前root文件系统切换到解压的root文件系统
 
-```:::bash
+```bash
   tklpatch-chroot root-dir [ command ...]
 ```
 
 * tklpatch-example： 创建tklpatch项目基础目录结构
 
-```:::bash
+```bash
   tklpatch-example [options] new-patch-dir
 ```
 
 * tklpatch-extract-iso： 解压基础iso文件
 
-```:::bash
+```bash
   tklpatch-extract-iso isofile
 ```
 
 * tklpatch-geniso： 根据准备好的cdroot创建iso文件
 
-```:::bash
+```bash
   tklpatch-geniso cdroot-dir [newimage.iso]
 ```
 
 * tklpatch-prepare-cdroot： 根据解压的root文件系统创建cdroot
 
-```:::bash
+```bash
   tklpatch-prepare-cdroot rootfs-dir [cdroot-dir]
 ```
 

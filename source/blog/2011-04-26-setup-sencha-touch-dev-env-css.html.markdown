@@ -22,7 +22,7 @@ READMORE
 
 ### 创建Compass目录结构
 
-```:::bash
+```bash
 compass create /path/to/project/public/resources/
 ```
 
@@ -68,7 +68,7 @@ compass compile /path/to/project/public/resources
 
 编译后输出的css文件存放在/path/to/project/public/resources/stylesheets/，现在打开该目录中的application.css，其生成的代码如下：
 
-```:::css
+```css
 .x-toolbar{color:red}
 ```
 

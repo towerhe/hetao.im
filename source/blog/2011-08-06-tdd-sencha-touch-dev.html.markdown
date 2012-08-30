@@ -26,7 +26,7 @@ Touch项目目录结构，并包含一个代码生成器。使用了一下发现
 
 * *生成Sencha Touch项目*
 
-  ```:::bash
+  ```bash
     ./sencha.sh generate app YourSenchaTouchApp /path/to/save/YourSenchaTouchApp
   ```
 
@@ -59,7 +59,7 @@ Touch项目中生成三个文件并修改两个文件。但是很遗憾，目前
                └── User.js - 新生成的User模型的spec
 ```
 
-```:::bash
+```bash
   ./sencha.sh generate model User name:string password:string age:int
 ```
 
@@ -86,7 +86,7 @@ Touch项目中生成两个文件并修改两个文件。同样很遗憾，目前
                └── controllers.js - 新生成的users控制器的spec
 ```
 
-```:::bash
+```bash
   ./sencha.sh generate controller users index new create show update destroy
 ```
 

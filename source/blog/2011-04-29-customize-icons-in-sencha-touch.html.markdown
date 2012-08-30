@@ -57,7 +57,7 @@ $include-default-icons: false;
 </pre>
 
 ### 编译
-```:::bash
+```bash
 compass compile resources
 ```
 

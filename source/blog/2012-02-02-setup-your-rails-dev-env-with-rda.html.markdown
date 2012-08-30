@@ -3,7 +3,7 @@ title: Setup your rails development environment with RDA
 author: Tower He
 categories: [programming]
 tags: [ruby, rails, nginx, passenger, rvm]
-date_created: 2012/02/02
+date: 2012/02/02
 keywords: ruby, rails
 ---
 
@@ -20,61 +20,66 @@ READMORE
 
 ### Requirements
 
-  * *RVM*
+* *RVM*
 
-    RVM is a command-line tool which allows you to easily install,
-  manage, and work with multiple ruby environments from interpreters to
-  sets of gems.
+  RVM is a command-line tool which allows you to easily install,
+manage, and work with multiple ruby environments from interpreters to
+sets of gems.
 
-    You should install RVM first. You can follow the installation tips
-  on [https://rvm.beginrescueend.com/rvm/install/#explained](https://rvm.beginrescueend.com/rvm/install/#explained) or just execute the following instructions:
+  You should install RVM first. You can follow the installation tips
+on [https://rvm.beginrescueend.com/rvm/install/#explained](https://rvm.beginrescueend.com/rvm/install/#explained) or just execute the following instructions:
 
-  ```:::bash
-    bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
-  ```
+```bash
+  bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+```
 
-  * *Nginx + Passenger*
+* *Nginx + Passenger*
 
-    Nginx is an HTTP and reverse proxy server, as well as a
-  mail proxy server, written by Igor Sysoev. For a long time, it has been
-  running on many heavily loaded Russian sites including Yandex, Mail.Ru,
-  VKontakte, and Rambler. According to Netcraft nginx served or proxied 8.49% busiest sites in January 2012. 
+  Nginx is an HTTP and reverse proxy server, as well as a
+mail proxy server, written by Igor Sysoev. For a long time, it has been
+running on many heavily loaded Russian sites including Yandex, Mail.Ru,
+VKontakte, and Rambler. According to Netcraft nginx served or proxied 8.49% busiest sites in January 2012. 
 
-    Phusion Passenger™ — a.k.a. mod_rails or mod_rack — makes deployment
-  of Ruby web applications, such as those built on the revolutionary Ruby
-  on Rails web framework, a breeze. It follows the usual Ruby on Rails
-  conventions, such as “Don’t-Repeat-Yourself”.
+  Phusion Passenger™ — a.k.a. mod_rails or mod_rack — makes deployment
+of Ruby web applications, such as those built on the revolutionary Ruby
+on Rails web framework, a breeze. It follows the usual Ruby on Rails
+conventions, such as “Don’t-Repeat-Yourself”.
 
-    As simple as posible, you can follow the installation instructions
-  on [http://www.modrails.com/install.html](http://www.modrails.com/install.html) or:
+  As simple as posible, you can follow the installation instructions
+on [http://www.modrails.com/install.html](http://www.modrails.com/install.html) or:
 
-    *Note:* In the process of installing nginx, you will get an error when downloading
-  pcre. For passenger 3.0.11, it tries to download pcre 8.12 which is
-  removed when installing nginx. To fix this error, you should modify
-  phusion_passenger.rb of the installed passenger gem directory and set the version of pcre to 8.21.
+  *Note:* In the process of installing nginx, you will get an error when downloading
+pcre. For passenger 3.0.11, it tries to download pcre 8.12 which is
+removed when installing nginx. To fix this error, you should modify
+phusion_passenger.rb of the installed passenger gem directory and set the version of pcre to 8.21.
 
-  ```:::bash
-    # 1. Install passenger
-    gem install passenger
-    # 2. Install nginx
-    passenger-install-nginx-module
-  ```
+1) Install passenger
+
+```bash
+  gem install passenger
+```
+
+2) Install nginx
+
+```bash
+  passenger-install-nginx-module
+```
 
 ### Install RDA
 
-```:::bash
+```bash
   gem install rda
 ```
 
 Or simply add rda to the Gemfile
 
-```:::ruby
+```ruby
   gem 'rda'
 ```
 
 ### Setup RVM
 
-```:::bash
+```bash
   rake rda:rvm:setup
 ```
 
@@ -82,7 +87,7 @@ First of all, this task will check whether the RVM is installed. If RVM
 is installed, it will create a .rvmrc for the application with the
 content which looks like:
 
-```:::bash
+```bash
   if [[ -s "/path/to/rvm/environments/ruby-1.9.3-p0@app_name" ]]; then
     . "/path/to/rvm/environments/ruby-1.9.3-p0@app_name"
   else
@@ -92,17 +97,17 @@ content which looks like:
 
 After RVM setup, you need to trust the rvmrc by:
 
-```:::bash
+```bash
   rvm rvmrc trust
 ```
 
-Or you can set rvm_trust_rvmrcs_flag=1 in ~/.rvmrc or /etc/rvmrc.
+Or you can set `rvm_trust_rvmrcs_flag=1` in ~/.rvmrc or /etc/rvmrc.
 
 If RVM is not installed this task will do nothing but exit.
 
 ### Setup Nginx + Passenger
 
-```:::bash
+```bash
   rake rda:nginx:setup
 ```
 
@@ -115,14 +120,14 @@ have installed from the following paths:
   
 You can change the default searching paths by:
 
-```:::ruby
+```bash
   Rda.configure { nginx_conf_paths ['/path/to/nginx/conf'] }
 ```
 
 Please make sure that you have the write permission of the directory you
 choosed, or you can run:
 
-```:::bash
+```bash
   sudo rake rda:nginx:setup
 ```
 
@@ -143,7 +148,7 @@ application in /etc/hosts.
 
 Now You need to start Nginx: 
 
-```:::bash
+```bash
   /path/to/nginx/sbin/nginx
 ```
 

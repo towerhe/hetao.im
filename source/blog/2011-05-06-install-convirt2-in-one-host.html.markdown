@@ -15,7 +15,7 @@ READMORE
 
 KVM目前支持Intel VT及AMD-V的原生虚拟技术。运行以下命令检测是否支持。
 
-```:::bash
+```bash
 kvm-ok
 ```
 
@@ -35,7 +35,7 @@ Ubuntu Server 10.04.2 (Lucid Lynx) x86_64
 编辑软件包源列表文件/etc/apt/sources.list，追加http://archive.canonical.com/ubuntu
 lucid partner，并更新软件索引：
 
-```:::bash
+```bash
 sudo apt-get update
 ```
 
@@ -43,7 +43,7 @@ sudo apt-get update
 
 * 安装KVM 
 
-```:::bash
+```bash
 sudo apt-get install ssh kvm socat dnsmasq uml-utilities lvm2 expect
 ```
 
@@ -51,19 +51,19 @@ sudo apt-get install ssh kvm socat dnsmasq uml-utilities lvm2 expect
 
 通过安装convirture-tools来帮助你配置虚拟资源服务器，使得其可以通过ConVirt来进行方便的管理。该命令将创建一个公有的网桥，相关的脚本并将操作摘要写入/var/cache/convirt/server_info。
 
-```:::bash
+```bash
 sudo apt-get install convirture-tools
 ```
 
 安装相关依赖：
 
-```:::bash
+```bash
 sudo convirt-tool install_dependencies
 ```
 
 配置网络：
 
-```:::bash
+```bash
 sudo convirt-tool setup
 ```
 
@@ -92,7 +92,7 @@ setup后，默认创建的网桥是通过dhcp服务来配置的，因此需要�
 
 网络配置完成后，重启服务：
 
-```:::bash
+```bash
 sudo /etc/init.d/networking restart
 ```
 
@@ -100,7 +100,7 @@ sudo /etc/init.d/networking restart
 
 由于ConVirt使用VNC来连接虚拟机，且使用root用户，因此需要配置本机使其使用root用户连接本机ssh服务时，不需要输入口令。配置方法如下：
 
-```:::bash
+```bash
 sudo cp /var/lib/convirt/identity/cms_id_rsa /root/.ssh/id_rsa
 sudo cp /var/lib/convirt/identity/cms_id_rsa.pub
 /root/.ssh/authorized_keys
@@ -108,13 +108,13 @@ sudo cp /var/lib/convirt/identity/cms_id_rsa.pub
 
 尝试用root用户连接本机ssh服务：
 
-```:::bash
+```bash
 ssh root@192.168.1.240
 ```
 
 如果不需要口令验证，则说明已经配置成功，否则使用如下命令查看失败原因：
 
-```:::bash
+```bash
 ssh root@192.168.1.240 -v
 ```
 
