@@ -738,7 +738,7 @@ article {
   width: 940px;
   height: 62px;
   margin: 60px auto 60px auto;
-  background-image: url(/images/footer.png); }
+  /*background-image: url(/images/footer.png); }*/
   /* line 759, site.css.scss */
   #footer .info {
     font-family: "MavenProBold";
