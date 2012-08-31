@@ -1,0 +1,44 @@
+@import "compass";
+
+h2 {
+  font-size: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+
+#header {
+  #logo {
+    font-size: 32px;
+    padding: 10px;
+  }
+
+  #sns {
+    position: absolute;
+    right: 7px;
+    top: 21px;
+    a {
+      color: white;
+      @include text-shadow(rgba(255,255,255,0.16) 0 1px 0px);
+      background-color: #bf4737;
+      @include border-radius(3px);
+      @include box-shadow(rgba(255, 255, 255, 0.15) 0 1px 0px, inset rgba(0, 0, 0, 0.17) 0 1px 1px);
+      font-family: "MavenProBold";
+      font-size: 13px;
+      text-transform: uppercase;
+      padding: 10px;
+    }
+
+    a:hover {
+      color: #6f1b0b;
+    }
+  }
+}
+
+#sidebar {
+  #articles, #tags, #years {
+    margin-bottom: 20px;
+    li {
+      margin: 5px;
+    }
+  }
+}

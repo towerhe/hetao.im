@@ -1,4 +1,5 @@
 require "redcarpet"
+require "active_support/core_ext"
 require "coderay"
 
 ###
